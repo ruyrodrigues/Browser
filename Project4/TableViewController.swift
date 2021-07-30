@@ -1,21 +1,19 @@
-//
-//  TableViewController.swift
-//  Project4
-//
-//  Created by user on 13/07/21.
-//
-
 import UIKit
 
 class TableViewController: UITableViewController {
 
+    //MARK: - Variables
     var viewController = ViewController()
     
+    
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Choose a site to browse"
     }
+    
 
+    //MARK: - TableView Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewController.websites.count
     }

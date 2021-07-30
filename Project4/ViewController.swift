@@ -42,6 +42,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         webView.allowsBackForwardNavigationGestures = true
     }
     
+    
     //MARK: - Methods
     @objc func openTapped() {
         let alertController = UIAlertController(title: "Open page..", message: nil, preferredStyle: .actionSheet)
@@ -70,26 +71,29 @@ class ViewController: UIViewController, WKNavigationDelegate {
             progressView.progress = Float(webView.estimatedProgress)
         }
     }
+ 
     
-//    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-//
-//        let url = navigationAction.request.url
-//        let alert = UIAlertController(title: "Warning", message: "This website is blocked!", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-//
-//        if let host = url?.host {
-//            for website in websites {
-//                if host.contains(website) {
-//                    decisionHandler(.allow)
-//                    return
-//                }
-//            }
-//        }
-//        decisionHandler(.cancel)
-//        present(alert, animated: true)
-//    }
-    
+/* in progress
+ 
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 
+        let url = navigationAction.request.url
+        let alert = UIAlertController(title: "Warning", message: "This website is blocked!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+        if let host = url?.host {
+            for website in websites {
+                if host.contains(website) {
+                    decisionHandler(.allow)
+                    return
+                }
+            }
+        }
+        decisionHandler(.cancel)
+        present(alert, animated: true)
+    }
+    
+*/
     
 }
 
